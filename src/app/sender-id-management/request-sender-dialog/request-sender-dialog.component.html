@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Create Template</h2>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="senderIdManagementForm">
+        <mat-form-field>
+            <mat-label>Sender Name</mat-label>
+            <input matInput placeholder="" formControlName="sender" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Account Type</mat-label>
+            <mat-select formControlName="senderType">
+                <mat-option value="trans">Transactional</mat-option>
+                <mat-option value="pro">Promotional</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
+        <mat-form-field appearance="fill">
+            <mat-label>DLT Principal Entity Id</mat-label>
+            <input matInput placeholder="" formControlName="dltPeId" />
+        </mat-form-field>
+       
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="createNewShortenedUrl()">{{actionBtn}}</button>
+    <button mat-button color="warn" (click)="cancel()">Cancel</button>
+</div>

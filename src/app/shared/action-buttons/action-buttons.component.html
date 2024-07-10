@@ -1,0 +1,19 @@
+
+<div class="action-button-container">
+    <button mat-fab color="warn" [matMenuTriggerFor]="menu"  matTooltip="Minimize" matTooltipPosition="left">
+        <img [src]="downArrowIcon">
+    </button>
+    <mat-menu #menu="matMenu" xPosition="after" yPosition="below" class="action-buttons" >
+      <button mat-fab color="warn" matTooltip="WhatsApp" matTooltipPosition="left" (click)="redirectToWhatsApp()">
+        <img [src]="whatsAppIcon">
+      </button>
+      <br>
+      <button mat-fab color="warn" matTooltip="Telegram" matTooltipPosition="left" (click)="redirectToTelegram()">
+        <img [src]="telegramIcon">
+      </button>
+      <br>
+      <button mat-fab color="warn" matTooltip="CallBack" matTooltipPosition="left" (click)="makePhoneCall()">
+        <img [src]="callbackIcon">
+      </button>
+    </mat-menu>
+  </div>

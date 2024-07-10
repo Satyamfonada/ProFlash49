@@ -1,0 +1,28 @@
+<!-- <div class="top-navigation__search">
+    <i class="top-navigation__search-icon fas fa-search"></i>
+    <input class="top-navigation__search-input" placeholder="Search..."/>
+  </div> -->
+<nav class="navbar navbar-expand navbar-light bg-light px-3" *ngIf="user">
+  <div class="navbar-nav mr-auto mt-2 mt-lg-0">
+    <a class="nav-item nav-link" routerLink="/" routerLinkActive="active"
+      [routerLinkActiveOptions]="{exact: true}">Home</a>
+    <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a> -->
+    <a class="nav-link" href="tel:7479574795"><i class="fa fa-phone"></i> 7479574795</a>
+    <a class="nav-link" href="mailto:info@fonada.com"><i class="fa fa-envelope"></i> info@fonada.com</a>
+  </div>
+
+  <form class="form-inline my-2 my-lg-0">
+    <mat-menu #themeMenu="matMenu">
+      <button mat-menu-item (click)="switchTheme('light')">Light Theme</button>
+      <button mat-menu-item (click)="switchTheme('dark')">Dark Theme</button>
+      <button mat-menu-item (click)="switchTheme('red')">Red Theme</button>
+      <button mat-menu-item (click)="switchTheme('blue')">Blue Theme</button>
+    </mat-menu>
+    
+    <button mat-stroked-button [matMenuTriggerFor]="themeMenu">Toggle Theme</button>
+    
+    <!-- <button class="btn btn-outline-secondary btn-sm my-2 my-sm-0" (click)="switchTheme('light')">Light Theme</button>
+    <button class="btn btn-outline-dark btn-sm my-2 my-sm-0 m-2" (click)="switchTheme('dark')">Dark Theme</button> -->
+    <button class="btn btn-outline-danger btn-sm my-2 my-sm-0 m-2" (click)="logout()">Logout</button>
+  </form>
+</nav>

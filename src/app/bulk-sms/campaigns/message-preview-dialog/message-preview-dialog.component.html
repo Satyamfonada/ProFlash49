@@ -1,0 +1,15 @@
+<div class="action-rows">
+    <h2 mat-dialog-title>Message Preview</h2>
+</div>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    {{data.myTextarea}}<br><br>
+    <div class="messageCounts" *ngIf="data.charCount">
+        <p>Total characters: <b>{{ data.charCount }}</b>,&nbsp;<b>{{ data.messageCount }}</b> message will be delivered.</p>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="warn" (click)="cancel()">OK</button>
+</div>

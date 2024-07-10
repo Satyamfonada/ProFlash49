@@ -1,0 +1,22 @@
+.login-container{
+    margin-top: 22%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 6% 10%;
+    box-shadow: 0 0 12px #ddd;
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.logo-section{
+    text-align: center;
+    img{
+        max-width: 215px;
+    }
+}
+
+.text-divider{margin: 1.5em 0; line-height: 0; text-align: center;}
+.text-divider span{background-color: #fff; padding: 1em;}
+.text-divider:before{ content: " "; display: block; border-top: 1px solid #e3e3e3; border-bottom: 1px solid #f7f7f7;}

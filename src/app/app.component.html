@@ -1,0 +1,23 @@
+<!-- nav -->
+<!-- <nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="user">
+    <div class="navbar-nav">
+        <a class="nav-item nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+        <button class="btn btn-link nav-item nav-link" (click)="logout()">Logout</button>
+    </div>
+</nav> -->
+
+<div class="app-container" [ngClass]="{ 'bg-light': user }" *ngIf="user">
+    <div class="main-section">
+        <div>
+            <app-side-navigation></app-side-navigation>
+        </div>
+        <div class="working-area">
+            <app-top-navigation></app-top-navigation>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<div class="app-container" [ngClass]="{ 'bg-light': user }" *ngIf="!user">
+    <router-outlet></router-outlet>
+</div>

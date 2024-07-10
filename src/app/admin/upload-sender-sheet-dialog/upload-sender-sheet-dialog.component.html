@@ -1,0 +1,46 @@
+<div class="action-rows">
+    <h2 mat-dialog-title>Upload Sender Sheet</h2>
+    <div>
+        <button mat-icon-button color="warn" [matTooltip]="isWide ? 'Fullscreen Exit' : 'Fullscreen'"
+            (click)="toggleDialogWidth()">
+            <mat-icon *ngIf="iconState === 'fullscreen'">fullscreen</mat-icon>
+            <mat-icon *ngIf="iconState === 'fullscreenExit'">fullscreen_exit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="cancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="uploadSenderManagementForm">
+        <div class="example-button-row">
+            <button type="button" mat-raised-button (click)="fileInput.click()"><mat-icon>upload</mat-icon> Upload a CSV
+                File</button>
+            <input hidden formControlName="fileName" (change)="uploadCsvFile($event)" #fileInput type="file">
+            <span class="file-name">{{selectedFile?.name}}</span>
+            <button mat-raised-button color="accent" (click)="downloadCSV()"><mat-icon>download</mat-icon> Download
+                Sample</button>
+        </div>
+        <mat-form-field appearance="fill">
+            <mat-label>User</mat-label>
+            <mat-select formControlName="user" (selectionChange)="onSelectionChange($event.value)">
+                <mat-option *ngFor="let option of selectOptions" [value]="option['firstName']">
+                    {{ option['firstName'] }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Account Type</mat-label>
+            <mat-select formControlName="accountType">
+                <mat-option value="Pro">Pro</mat-option>
+                <mat-option value="Cons">Cons</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="handleFileSelect()">Submit</button>
+</div>

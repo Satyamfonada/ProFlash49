@@ -1,0 +1,953 @@
+{
+  "repositoryList": [
+    {
+      "repositoryName": "Bulk Upload",
+      "id": 2
+    },
+    {
+      "repositoryName": "Blacklist1111",
+      "id": 6
+    },
+    {
+      "repositoryName": "NewListing",
+      "id": 7
+    },
+    {
+      "repositoryName": "New Blacklist",
+      "id": 9
+    },
+    {
+      "repositoryName": "NNNNN",
+      "id": 10
+    },
+    {
+      "repositoryName": "New BlackList",
+      "id": 11
+    },
+    {
+      "repositoryName": "NEw BlackLIst",
+      "id": 12
+    }
+  ],
+  "upload": [],
+  "newEntryAdded": [
+    [
+      {
+        "id": "1",
+        "firstName": "Dileep",
+        "lastName": "Saxena",
+        "email": "dileep@gmail.com",
+        "mobileNumber": "9958788916"
+      },
+      {
+        "id": "2",
+        "firstName": "Kunal",
+        "lastName": "Saxena",
+        "email": "kunal@g.com",
+        "mobileNumber": "98989999"
+      }
+    ],
+    {
+      "firstName": "RR",
+      "lastName": "RR",
+      "email": "RR",
+      "mobileNumber": "RR",
+      "id": 7
+    },
+    {
+      "firstName": "Dev",
+      "lastName": "Kumar",
+      "email": "dev@gmail.com",
+      "mobileNumber": "9494949494",
+      "id": 8
+    },
+    [
+      {
+        "id": "1",
+        "firstName": "Dileep Ku",
+        "lastName": "Saxena",
+        "email": "dileep@gmail.com",
+        "mobileNumber": "9958788916"
+      },
+      {
+        "id": "2",
+        "firstName": "Kunal S",
+        "lastName": "Saxena",
+        "email": "kunal@g.com",
+        "mobileNumber": "98989999"
+      },
+      {
+        "id": "3",
+        "firstName": "Raj",
+        "lastName": "Kumar",
+        "email": "raj@g.com",
+        "mobileNumber": "50505050"
+      }
+    ],
+    [
+      {
+        "id": "1",
+        "firstName": "Dileep",
+        "lastName": "Saxena",
+        "email": "dileep@gmail.com",
+        "mobileNumber": "9958788916"
+      },
+      {
+        "id": "2",
+        "firstName": "Kunal",
+        "lastName": "Saxena",
+        "email": "kunal@g.com",
+        "mobileNumber": "98989999"
+      },
+      {
+        "id": "3",
+        "firstName": "Tarun",
+        "lastName": "Saxena",
+        "email": "tarun@gmail.com",
+        "mobileNumber": "9999999999"
+      }
+    ],
+    {
+      "firstName": "Test",
+      "lastName": "Test",
+      "email": "d@gmail.com",
+      "mobileNumber": "9595959595",
+      "id": 10
+    },
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    {
+      "firstName": "Address0",
+      "lastName": "TTT",
+      "email": "T@gmail.com",
+      "mobileNumber": "9494589585",
+      "id": 12
+    },
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    {
+      "firstName": "OPS",
+      "lastName": "Admin",
+      "email": "admin@g.com",
+      "mobileNumber": "4538934589",
+      "id": 18
+    },
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      },
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "95xxxxxxxx"
+      }
+    ],
+    [
+      {
+        "First Name": "first_name",
+        "Last Name": "last_name",
+        "Email": "email id",
+        "Mobile Number": "99xxxxxxxx"
+      }
+    ]
+  ],
+  "urlManagement": [
+    {
+      "urlTitle": "Offer One1",
+      "shortUrl": "https://pro.flash49.com/ui/trac_link.html",
+      "id": 1
+    },
+    {
+      "urlTitle": "Latest Offer",
+      "shortUrl": "http://localhost:4200/url-management",
+      "id": 2
+    },
+    {
+      "urlTitle": "Fonada (Shivtel Communications) ",
+      "shortUrl": "https://www.fonada.com/",
+      "id": 3
+    },
+    {
+      "urlTitle": "t56465456565656",
+      "shortUrl": "http://localhost:4201/url-management",
+      "id": 4
+    }
+  ],
+  "templateManagement": [
+    {
+      "templateLabel": "Template Label1",
+      "campaignType": "Transactional",
+      "senders": "Senders1",
+      "templateType": "Positional",
+      "dLTContentId": "DLT050505",
+      "templateText": "Testing",
+      "id": 1
+    },
+    {
+      "templateLabel": "TempL2",
+      "campaignType": "Promotional",
+      "senders": "Senders2",
+      "templateType": "Variable",
+      "dLTContentId": "YT08945308934",
+      "templateText": "Testing..........",
+      "id": 2
+    },
+    {
+      "templateLabel": "TEMPP5",
+      "campaignType": "Transactional",
+      "senders": "Senders1",
+      "templateType": "Positional",
+      "dLTContentId": "DDLLTTIIDD0505050",
+      "templateText": "Just for testing",
+      "id": 3
+    }
+  ],
+  "senderIdManagement": [
+    {
+      "senderName": "Admin",
+      "accountType": "Transactional",
+      "dLTPrincipalEntityId": "DLT543098304590",
+      "id": 1
+    },
+    {
+      "senderName": "Super Admin",
+      "accountType": "Promotional",
+      "dLTPrincipalEntityId": "DLT04040404",
+      "id": 2
+    }
+  ],
+  "bulkSmsBroadcast": [
+    {
+      "campaignName": "Camp_ID_00555",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "9958788916",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "PlainText",
+      "flashMessage": true,
+      "dltContentId": "DLT_ID_0004040404",
+      "message": "Hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 1
+    },
+    {
+      "campaignName": "Camp_ID-9595955",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "9595959595",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "PlainText",
+      "flashMessage": true,
+      "dltContentId": "DLT_ID_94949494",
+      "message": "Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 2
+    },
+    {
+      "campaignName": "TEST_04040404",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "95959595",
+      "uploadAcsvFile": "C:\\fakepath\\addressBookSample.csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "option",
+      "flashMessage": true,
+      "dltContentId": "CampID04040404",
+      "message": "Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 3
+    },
+    {
+      "campaignName": "CampID_545454",
+      "connectionType": "Promotional",
+      "from": "Fonada",
+      "to": "9958788916",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "option",
+      "flashMessage": true,
+      "dltContentId": "DLT_ID_050505050",
+      "message": "Hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 4
+    },
+    {
+      "campaignName": "CampID_9090090",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "9595959595\n9958788916",
+      "fileName": "C:\\fakepath\\addressBookSample.csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "PlainText",
+      "flashMessage": true,
+      "dltContentId": "DLT_ID_890123456",
+      "message": "Hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 5
+    },
+    {
+      "campaignName": "CampaignsID_04040404",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "919958788916",
+      "fileName": "C:\\fakepath\\addressBookSample.csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "PlainText",
+      "flashMessage": true,
+      "dltContentId": "http://localhost:4200/campaigns",
+      "dltEntityId": "http://localhost:4200/",
+      "message": "Hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 6
+    },
+    {
+      "campaignName": "Camp_Simple_ID_044040",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "9948788916",
+      "fileName": "C:\\fakepath\\UserBaseSample (3).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "DLT_Content_04040404044",
+      "dltEntityId": "DLT_Entity_ID_0404040404",
+      "message": "Hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 7
+    },
+    {
+      "campaignName": "DynamicCampID_567890",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "DLT04040404",
+      "id": 8
+    },
+    {
+      "campaignName": "SimpleCampID_888888",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "9958788916",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "DLT_0404040404",
+      "dltEntityId": "DLE_8458585",
+      "message": "Hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 9
+    },
+    {
+      "campaignName": "DynamicCamp88888",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "3459894389453",
+      "id": 11
+    },
+    {
+      "campaignName": "Simple4040404",
+      "connectionType": "Promotional",
+      "from": "Fonada",
+      "to": "505050505050",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "3489453974539",
+      "dltEntityId": "34787489349",
+      "message": "Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 12
+    },
+    {
+      "campaignName": "SimpleCampID_0404040",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "94949494949",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "DDDDD4040404",
+      "dltEntityId": "EEEE04040404",
+      "message": "Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 13
+    },
+    {
+      "campaignName": "SimpleTestfile",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "99999999999",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "76766757657",
+      "dltEntityId": "897979798",
+      "message": "hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 14
+    },
+    {
+      "campaignName": "Simple00000",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "99999999999",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "76766757657",
+      "dltEntityId": "897979798",
+      "message": "hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 15
+    },
+    {
+      "campaignName": "SimpleTest",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "99999999999",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "76766757657",
+      "dltEntityId": "897979798",
+      "message": "hi, Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "id": 16
+    },
+    {
+      "campaignName": "57",
+      "connectionType": "Promotional",
+      "from": "Fonada",
+      "to": "gututuy",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "jhkjh",
+      "dltEntityId": "jh",
+      "message": "ghfhfgghfghf",
+      "id": 17
+    },
+    {
+      "campaignName": "trtry",
+      "connectionType": "Promotional",
+      "from": "Fonada",
+      "to": "yutuuut",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "768687",
+      "dltEntityId": "tyut76576",
+      "message": "jhfghgf",
+      "id": 19
+    },
+    {
+      "campaignName": "kjjkhkjhjk",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "0980980809",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "897978979",
+      "dltEntityId": "098098080",
+      "message": "8yuyhiuyi",
+      "id": 20
+    },
+    {
+      "campaignName": "Dynamic950894509845045934509",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "79789789798",
+      "id": 21
+    },
+    {
+      "campaignName": "dddd",
+      "connectionType": "Promotional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "78979789798",
+      "id": 22
+    },
+    {
+      "campaignName": "Simmm",
+      "connectionType": "Promotional",
+      "from": "Fonada",
+      "to": "78978978979",
+      "fileName": "C:\\fakepath\\UserBaseSample (3).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "78979789",
+      "dltEntityId": "000u98789789789",
+      "message": "76867868768",
+      "id": 23
+    },
+    {
+      "campaignName": "4539804984090909438043",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "89987897979",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "768786786878",
+      "dltEntityId": "7897878979789",
+      "message": "6876868768767868",
+      "id": 24
+    },
+    {
+      "campaignName": "DDD",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (3).csv",
+      "flashMessage": true,
+      "dltContentId": "87678686786",
+      "id": 25
+    },
+    {
+      "campaignName": "Simple",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "99999999",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "",
+      "flashMessage": true,
+      "dltContentId": "8978989789789",
+      "dltEntityId": "464646464654",
+      "message": "",
+      "flag": "Simple",
+      "actionType": "execute",
+      "id": 26
+    },
+    {
+      "campaignName": "dynamic56667868",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (3).csv",
+      "flashMessage": true,
+      "dltContentId": "7868678678678",
+      "actionType": "schedule",
+      "id": 27
+    },
+    {
+      "campaignName": "dddddddd",
+      "connectionType": "Promotional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "0000000",
+      "flag": "Dynamic",
+      "actionType": "schedule",
+      "id": 28
+    },
+    {
+      "campaignName": "yweiryweir",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "werwerwer",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "rwerwer",
+      "dltEntityId": "rwer",
+      "message": "sdfsdfs",
+      "flag": "Simple",
+      "actionType": "execute",
+      "id": 29
+    },
+    {
+      "campaignName": "dsfsdffsdfxcvv",
+      "connectionType": "Promotional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "wewqwr",
+      "id": 30
+    },
+    {
+      "campaignName": "DynamicID04040404",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (3).csv",
+      "flashMessage": true,
+      "dltContentId": "u78678768",
+      "flag": "Dynamic",
+      "actionType": "schedule",
+      "id": 31
+    },
+    {
+      "campaignName": "Camp_0404",
+      "connectionType": "Transactional",
+      "from": "option",
+      "template": "option",
+      "fileName": "C:\\fakepath\\UserBaseSample (4).csv",
+      "flashMessage": true,
+      "dltContentId": "DLT0303",
+      "flag": "Dynamic",
+      "actionType": "execute",
+      "id": 32
+    },
+    {
+      "campaignName": "Test",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "9595959595",
+      "fileName": "C:\\fakepath\\addressBookSampleNew.csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "unicode-text",
+      "flashMessage": true,
+      "dltContentId": "58934734589",
+      "dltEntityId": "u534ou453",
+      "message": "फोन के साथ की गई ये 5 गलतियां, हमेशा के लिए खराब कर सकती हैं फोन! आज ही बदल दें आदत.",
+      "flag": "Simple",
+      "actionType": "save",
+      "id": 33
+    },
+    {
+      "campaignName": "Execute",
+      "connectionType": "Transactional",
+      "from": "Fonada",
+      "to": "ut095609458",
+      "fileName": "C:\\fakepath\\addressBookSampleNew.csv",
+      "selectTrackingURL": "TrackingURL",
+      "encoding": "plain-text",
+      "flashMessage": true,
+      "dltContentId": "0890908945",
+      "dltEntityId": "08908945",
+      "message": "Note:Tracking link generation and corresponding message length calculation happen only during runtime. Tracking links maximum length will be 24 characters.",
+      "flag": "Simple",
+      "actionType": "execute",
+      "id": 34
+    }
+  ],
+  "userManagement": [
+    {
+      "userId": "584389349",
+      "firstName": "Admin",
+      "lastName": "Test",
+      "address": "Fonada 135",
+      "emailId": "fonada@g.com",
+      "mobileNumber": "959595955",
+      "password": "Test@123",
+      "confirmPassword": "Test@123",
+      "gstNumber": "8934589348934",
+      "panNumber": "DLOP494958P",
+      "tps": "TSP",
+      "dltTelemarketerId": "DLT7934943",
+      "dltPrincipalEntityId": "DTLP0",
+      "accountManager": "option",
+      "creditDeductionBy": "",
+      "typeOfDeliveryAccount": "Normal",
+      "country": "option",
+      "security": "option",
+      "enableDndFiltering": true,
+      "numberOfTrackLink": "1",
+      "authorization": "option",
+      "trackLinkDomain": "www.g.com",
+      "accountStatus": "Postpaid",
+      "imageUpload": "C:\\fakepath\\ariel-view-1.jpg",
+      "copyrightText": "Just for testing",
+      "allowFromIp": "111.1.85",
+      "id": 1
+    },
+    {
+      "userId": "858585586",
+      "firstName": "Operation",
+      "lastName": "Team",
+      "address": "Noida",
+      "emailId": "operation@fonada.com",
+      "mobileNumber": "959595959595",
+      "password": "Test@123",
+      "confirmPassword": "Test@123",
+      "gstNumber": "GST05050505",
+      "panNumber": "DPUYT0404T",
+      "tps": "TSP",
+      "dltTelemarketerId": "DLT0088080",
+      "dltPrincipalEntityId": "DLTP093409340934",
+      "accountManager": "Manager",
+      "creditDeductionBy": "Accepted",
+      "typeOfDeliveryAccount": "Normal",
+      "country": "India",
+      "security": "Standard",
+      "enableDndFiltering": true,
+      "numberOfTrackLink": "2",
+      "authorization": "User",
+      "trackLinkDomain": "www.fonada.com",
+      "accountStatus": "Postpaid",
+      "imageUpload": "C:\\fakepath\\Screenshot 2023-05-21 175828.png",
+      "copyrightText": "Copyright",
+      "allowFromIp": "IP Address",
+      "id": 2
+    }
+  ],
+  "senderManagement": [
+    {
+      "senderName": "Raj Kumar",
+      "user": "User4",
+      "senderAllocationStatus": "User1",
+      "accountType": "Pro",
+      "id": 1
+    },
+    {
+      "senderName": "KISSHT",
+      "user": "Admin",
+      "senderAllocationStatus": "User2",
+      "accountType": "Cons",
+      "id": 2
+    },
+    {
+      "senderName": "BLUZMS",
+      "user": "584389349",
+      "senderAllocationStatus": "User1",
+      "accountType": "Pro",
+      "dltPrincipalEntityId": "DLT040404",
+      "id": 3
+    },
+    [
+      {
+        "name1": "name2",
+        "1111111111111": "2222222222222"
+      },
+      {
+        "name1": "name3",
+        "1111111111111": "3333333333333"
+      },
+      {
+        "name1": "name4",
+        "1111111111111": "4444444444444"
+      },
+      {
+        "name1": "name5",
+        "1111111111111": "5555555555555"
+      },
+      {
+        "name1": "name6",
+        "1111111111111": "6666666666666"
+      }
+    ]
+  ],
+  "routeManagement": [
+    {
+      "routeName": "sfsdfds",
+      "nodeName": "sdffsd",
+      "routeAutoStart": "True",
+      "deleveryWaitTime": "dfsdf",
+      "routeTps": "sdfsdf",
+      "routeStatus": "True",
+      "priority": "P1",
+      "country": "India",
+      "routeType": "SMPP",
+      "deductionBy": "Accepted",
+      "connectionType": "Promotional",
+      "selectedValue": "On-Net",
+      "selectOperator": "Airtel",
+      "countryCode": "",
+      "sender": "sdfsdf",
+      "inBoundURI": "sdfsdf",
+      "outBoundURI": "sdfsdf",
+      "messageValidity": "dssdf",
+      "senderPrefix": "sdfsdf",
+      "binaryAlphabet": "sdfsd",
+      "unicodeAlphabet": "sdfsdf",
+      "corePoolSize": "sdfsdf",
+      "maxPoolSize": "sdfsdf",
+      "poolId": "fsdsdf",
+      "startupTime": "sdfsdf",
+      "shutdownTime": "sdfsdf",
+      "routeParameter": "sdfsdf",
+      "id": 1
+    },
+    {
+      "routeName": "Shivtel",
+      "nodeName": "sdlsdfjl",
+      "routeAutoStart": "False",
+      "deleveryWaitTime": "fsdfsd",
+      "routeTps": "tr4r",
+      "routeStatus": "True",
+      "priority": "P1",
+      "country": "India",
+      "routeType": "SMPP",
+      "deductionBy": "Accepted",
+      "connectionType": "Promotional",
+      "selectedValue": "On-Net",
+      "selectOperator": "Global",
+      "countryCode": null,
+      "sender": "fsdfsd",
+      "inBoundURI": "fdsdsf",
+      "outBoundURI": "fsdsd",
+      "messageValidity": "sdfsdf",
+      "senderPrefix": "sdffd",
+      "binaryAlphabet": "fsd",
+      "unicodeAlphabet": "sdfsdf",
+      "corePoolSize": "sdfsdf",
+      "maxPoolSize": "dfsdf",
+      "poolId": "sdfsdf",
+      "startupTime": "fsdsdf",
+      "shutdownTime": "fsd",
+      "routeParameter": "sdffsd",
+      "id": 2
+    }
+  ],
+  "filterManagement": [
+    {
+      "key": "Key1",
+      "value": "Value1",
+      "id": 3
+    },
+    {
+      "filterName": "454545",
+      "filterClass": "dfgdfg",
+      "filterOrder": "gdfg",
+      "queueName": "gdfg",
+      "excludedUser": "dfgdfg",
+      "includedUser": "dfgdfg",
+      "status": "True",
+      "id": 4
+    },
+    {
+      "id": 5
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

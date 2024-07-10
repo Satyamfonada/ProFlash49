@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Repository Name</h2>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="repositoryForm">
+        <mat-form-field>
+            <mat-label>Repository Name</mat-label>
+            <input matInput placeholder="Ex. Blacklist" formControlName="repositoryName" />
+        </mat-form-field>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="onSaveClick()">{{actionBtn}}</button>
+    <button mat-button color="warn" (click)="onCancelClick()">Cancel</button>
+</div>

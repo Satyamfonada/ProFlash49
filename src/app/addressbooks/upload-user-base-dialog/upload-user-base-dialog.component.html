@@ -1,0 +1,23 @@
+<h2 mat-dialog-title>Upload User Base</h2>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="uploadUserBaseForm">
+        <mat-form-field>
+            <mat-label>Repository Name</mat-label>
+            <input matInput formControlName="repositoryName" readonly/>
+        </mat-form-field>
+
+        <button type="button" mat-raised-button (click)="fileInput.click()">Upload a CSV File</button>
+        <input hidden formControlName="fileName" (change)="uploadCsvFile($event)" #fileInput type="file">
+        <span class="file-name">{{selectedFile?.name}}</span>
+        <br>
+        <mat-checkbox class="mat-checkbox-alignment" formControlName="fileDeleted" (change)="onFileDelete($event)">Wipe Off</mat-checkbox>
+       
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="handleFileSelect()">Upload User Base</button>
+    <button  mat-button color="warn" (click)="onCancelClick()">Close</button>
+</div>

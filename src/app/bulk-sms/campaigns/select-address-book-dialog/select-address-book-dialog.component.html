@@ -1,0 +1,30 @@
+<div class="action-rows">
+    <h2 mat-dialog-title>Select Address Book</h2>
+    <div>
+        <button mat-icon-button color="warn" [matTooltip]="isWide ? 'Fullscreen Exit' : 'Fullscreen'"
+            (click)="toggleDialogWidth()">
+            <mat-icon *ngIf="iconState === 'fullscreen'">fullscreen</mat-icon>
+            <mat-icon *ngIf="iconState === 'fullscreenExit'">fullscreen_exit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="cancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-content>
+    <form [formGroup]="selectAddressBook">
+        <mat-form-field appearance="fill">
+            <mat-label>Select User Base </mat-label>
+            <mat-select [(value)]="data.selectedValue" (selectionChange)="onSelectionChange($event.value)">
+                <mat-option *ngFor="let option of selectOptions" [value]="option">
+                    {{ option }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="saveSelection()">Submit</button>
+</div>

@@ -1,0 +1,226 @@
+<div class="action-rows">
+    <h2 mat-dialog-title>Create Route</h2>
+    <div>
+        <button mat-icon-button color="warn" [matTooltip]="isWide ? 'Fullscreen Exit' : 'Fullscreen'"
+            (click)="toggleDialogWidth()">
+            <mat-icon *ngIf="iconState === 'fullscreen'">fullscreen</mat-icon>
+            <mat-icon *ngIf="iconState === 'fullscreenExit'">fullscreen_exit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="cancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="routeManagementForm">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Route Name</mat-label>
+                    <input matInput placeholder="Ex. Shivtel" formControlName="routeName" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Node Name</mat-label>
+                    <input matInput placeholder="Ex. All" formControlName="nodeName" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Route Auto Start</mat-label>
+                    <mat-select formControlName="routeAutoStart">
+                        <mat-option value="True">True</mat-option>
+                        <mat-option value="False">False</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Delivery Wait Time(Seconds)</mat-label>
+                    <input matInput placeholder="Ex. 0" formControlName="deleveryWaitTime" />
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Route TPS</mat-label>
+                    <input matInput placeholder="Ex. 100" formControlName="routeTps" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Route Status</mat-label>
+                    <mat-select formControlName="routeStatus">
+                        <mat-option value="True">True</mat-option>
+                        <mat-option value="False">False</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Priority</mat-label>
+                    <mat-select formControlName="priority">
+                        <mat-option value="P1">P1</mat-option>
+                        <mat-option value="P2">P2</mat-option>
+                        <mat-option value="P3">P3</mat-option>
+                        <mat-option value="P4">P4</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Country</mat-label>
+                    <mat-select formControlName="country">
+                        <mat-option value="India">India</mat-option>
+                        <mat-option value="Bangladesh">Bangladesh</mat-option>
+                        <mat-option value="Tanzania">Tanzania</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="fill">
+                    <mat-label>Route Type</mat-label>
+                    <mat-select formControlName="routeType">
+                        <mat-option value="SMPP">SMPP</mat-option>
+                        <mat-option value="OTP">OTP</mat-option>
+                        <mat-option value="HTTP">HTTP</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Deduction By (Optional)</mat-label>
+                    <mat-select formControlName="deductionBy">
+                        <mat-option value="Accepted">Accepted</mat-option>
+                        <mat-option value="Delivered">Delivered</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Connection Type</mat-label>
+                    <mat-select formControlName="connectionType">
+                        <mat-option value="Promotional">Promotional</mat-option>
+                        <mat-option value="Transactional">Transactional</mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label id="type-of-sms-pipe">Type of SMS Pipe</label>
+                <mat-radio-group class="example-radio-group" aria-label="Select an option"
+                    formControlName="selectedValue" (change)="radioChange($event)">
+                    <mat-radio-button class="example-radio-button" [value]="'OTP'">OTP</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" [value]="'On-Net'">On-Net</mat-radio-button>
+                    <mat-radio-button class="example-radio-button" [value]="'International'">International</mat-radio-button>
+                </mat-radio-group>
+
+            </div>
+            <div class="col-md-8 pt-5">
+                <mat-form-field appearance="fill" *ngIf="routeManagementForm.get('selectedValue').value === 'On-Net'">
+                    <mat-label>Select</mat-label>
+                    <mat-select formControlName="selectOperator">
+                        <mat-option value="Airtel">Airtel</mat-option>
+                        <mat-option value="BSNL">BSNL</mat-option>
+                        <mat-option value="Global">Global</mat-option>
+                        <mat-option value="Idea">Idea</mat-option>
+                        <mat-option value="Uninor">Uninor</mat-option>
+                        <mat-option value="Vodafone">Vodafone</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="routeManagementForm.get('selectedValue').value === 'International'">
+                    <mat-label>Please enter vaild country code seperated by comma (,)</mat-label>
+                    <input matInput placeholder="Ex. 0" formControlName="countryCode" />
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Sender</mat-label>
+                    <textarea matInput formControlName="sender"
+                        placeholder="Please enter comma (,) separated numeric sender Ids here for promotional route (Only used if sender is '00000')."></textarea>
+                </mat-form-field>
+            </div>
+        </div>
+        <p>
+            <mat-toolbar>
+                <span>SMPP Settings</span>
+            </mat-toolbar>
+        </p>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>In Bound URI</mat-label>
+                    <input matInput formControlName="inBoundURI" placeholder="smpp://loop@nodefea:4444?.....">
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Out Bound URI</mat-label>
+                    <input matInput formControlName="outBoundURI" placeholder="smpp://loop@nodefea:4444?.....">
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Message Validity</mat-label>
+                    <input matInput formControlName="messageValidity" placeholder="Message Validity">
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Sender Prefix</mat-label>
+                    <input matInput formControlName="senderPrefix" placeholder="Sender Prefix">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Binary Alphabet</mat-label>
+                    <input matInput formControlName="binaryAlphabet" placeholder="4">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Unicode Alphabet</mat-label>
+                    <input matInput formControlName="unicodeAlphabet" placeholder="4">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Core Pool Size</mat-label>
+                    <input matInput formControlName="corePoolSize" placeholder="0">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Max Pool Size</mat-label>
+                    <input matInput formControlName="maxPoolSize" placeholder="0">
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Pool Id</mat-label>
+                    <input matInput formControlName="poolId" placeholder="0">
+                </mat-form-field>
+            </div>
+        </div>
+        <p>
+            <mat-toolbar>
+                <span>Route Policy</span>
+            </mat-toolbar>
+        </p>
+        <div class="row">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Startup Time (cron)</mat-label>
+                    <input matInput formControlName="startupTime" placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Shutdown Time (cron)</mat-label>
+                    <input matInput formControlName="shutdownTime" placeholder="">
+                </mat-form-field>
+            </div>
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Route Parameter</mat-label>
+                    <input matInput formControlName="routeParameter" placeholder="">
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="createRouteManagementList()">
+        {{actionBtn}}</button>
+</div>

@@ -1,0 +1,94 @@
+<div class="action-rows">
+    <h2 mat-dialog-title>Compose Normal Transactional Broadcast</h2>
+    <div>
+        <button mat-icon-button color="warn" [matTooltip]="isWide ? 'Fullscreen Exit' : 'Fullscreen'"
+            (click)="toggleDialogWidth()">
+            <mat-icon *ngIf="iconState === 'fullscreen'">fullscreen</mat-icon>
+            <mat-icon *ngIf="iconState === 'fullscreenExit'">fullscreen_exit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="cancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="simpleBroadcastForm">
+        <mat-form-field>
+            <mat-label>Name</mat-label>
+            <input matInput placeholder="Ex. Camp_96591" formControlName="campaignName" />
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Connection Type</mat-label>
+            <mat-select formControlName="connectionType">
+                <mat-option value="Transactional">Transactional</mat-option>
+                <mat-option value="Promotional">Promotional</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>From</mat-label>
+            <mat-select formControlName="from">
+                <mat-option value="Fonada">Fonada</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>To</mat-label>
+            <textarea matInput formControlName="to"
+                placeholder="Enter mobile number and mobile number should start with 91 or without 91 and max 500 number with 91 and 591 number without 91 allowed"></textarea>
+        </mat-form-field>
+        <button type="button" mat-raised-button (click)="fileInput.click()">Upload a CSV File</button>
+        <input hidden formControlName="fileName" (change)="handleFileSelect1($event)" #fileInput type="file">
+        <span class="file-name">{{selectedFile?.name}}</span>&nbsp;
+        <button mat-raised-button (click)="downloadCSV()"><mat-icon>download</mat-icon> Download Sample</button>&nbsp;
+        <button mat-raised-button (click)="selectAddressBook()"><mat-icon>people</mat-icon> Select Address Book</button>
+        <br>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Select Tracking URL</mat-label>
+            <mat-select formControlName="connectionType" formControlName="selectTrackingURL">
+                <mat-option value="TrackingURL">Tracking URL</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Encoding</mat-label>
+            <mat-select formControlName="encoding" [(ngModel)]="selectedOption">
+                <mat-option [value]="'plain-text'">Plain Text</mat-option>
+                <mat-option [value]="'unicode-text'" *ngIf="hasUnicode">Unicode Text</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-checkbox class="mat-checkbox-alignment" formControlName="flashMessage">Flash Message</mat-checkbox>
+        <br><br>
+        <mat-form-field>
+            <mat-label>DLT Content ID</mat-label>
+            <input matInput placeholder="Ex. Camp_96591" formControlName="dltContentId" />
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label>DLT Entity ID</mat-label>
+            <input matInput placeholder="Ex. Camp_96591" formControlName="dltEntityId" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Message</mat-label>
+            <textarea matInput formControlName="message" [(ngModel)]="myTextarea"
+                (input)="updateCharCount()"></textarea>
+        </mat-form-field>
+        <div class="messageCounts" *ngIf="charCount">
+            <p>Total characters: <b>{{ charCount }}</b>,&nbsp;<b>{{ messageCount }}</b> message will be delivered.</p>
+        </div>
+        <div class="alert alert-warning" role="alert">
+            Note:Tracking link generation and corresponding message length calculation happen only during runtime.
+            Tracking links maximum length will be 24 characters.
+        </div>
+
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button (click)="messagePreview()"><mat-icon>mobile_screen_share</mat-icon> SMS Priview</button>
+    <button mat-raised-button color="accent" (click)="createSimpleBroadcast('save')"><mat-icon>save</mat-icon>
+        {{actionBtn}}</button>
+    <button mat-raised-button color="warn" (click)="createSimpleBroadcast('execute')"><mat-icon>play_arrow</mat-icon> Save and Execute</button>
+    <button mat-raised-button color="primary" (click)="createSimpleBroadcast('schedule')"><mat-icon>schedule</mat-icon> Save and Schedule</button>
+</div>

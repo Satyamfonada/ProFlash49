@@ -1,0 +1,82 @@
+// theme-variables.scss
+
+:root {
+    --primary-color: #343a40;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --background-hover-color: #d2f4ea;
+    --bg-color:#ffffff;
+    --mat-primary-custom:#673ab7;
+    --mat-warn-custom:#f44336;
+    --mat-accent-custom:#ffd740;
+    --card-border-bg:#ffa89e;
+    --btn-primary-bg:#198754;
+    --btn-primary-bg-hover:#157347;
+    --btn-primary-bg-active:#146c43;
+}
+
+.dark-theme {
+    --primary-color: #f5f5f5;
+    --secondary-color: #00ff00;
+    --background-color: #40A37C;
+    --background-hover-color: #2A7054;
+    --bg-color:#E7FAF4;
+    --card-bg:#d8f8ee;
+    --dasboard-card-bg:#e2fef5;
+    --heading-color:#328061;
+    --chart-bg-red-color:#ff0000;
+    --chart-bg-green-color:#008800;
+    --mat-primary-custom:#40A37C;
+    --mat-warn-custom:#477a6a;
+    --mat-accent-custom:#5decb4;
+    --card-border-bg:#40a37c;
+    --btn-primary-bg:#198754;
+    --btn-primary-bg-hover:#157347;
+    --btn-primary-bg-active:#146c43;
+}
+
+.light-theme {
+    --primary-color: #343a40;
+    --secondary-color: #6c757d;
+    --background-color: #ffffff;
+    --background-hover-color: #d2f4ea;
+    --bg-color:#ffffff;
+    --mat-primary-custom:#673ab7;
+    --mat-warn-custom:#f44336;
+    --mat-accent-custom:#ffd740;
+    --card-border-bg:#ffa89e;
+    --btn-primary-bg:#198754;
+    --btn-primary-bg-hover:#157347;
+    --btn-primary-bg-active:#146c43;
+}
+
+
+.red-theme {
+    --primary-color: #ffffff;
+    --secondary-color: #6c757d;
+    --background-color: #e74645;
+    --background-hover-color: #cb3c3b;
+    --bg-color:#ffffff;
+    --mat-primary-custom:#FB7756;
+    --mat-warn-custom:#e74645;
+    --mat-accent-custom:#ffd740;
+    --card-border-bg:#ffa89e;
+    --btn-primary-bg:#e74645;
+    --btn-primary-bg-hover:#bb3433;
+    --btn-primary-bg-active:#8f2827;
+}
+
+.blue-theme {
+    --primary-color: #ffffff;
+    --secondary-color: #6c757d;
+    --background-color: #002E8B;
+    --background-hover-color: #cb3c3b;
+    --bg-color:#ffffff;
+    --mat-primary-custom:#FB7756;
+    --mat-warn-custom:#002E8B;
+    --mat-accent-custom:#ffd740;
+    --card-border-bg:#ffa89e;
+    --btn-primary-bg:#002E8B;
+    --btn-primary-bg-hover:#bb3433;
+    --btn-primary-bg-active:#8f2827;
+}

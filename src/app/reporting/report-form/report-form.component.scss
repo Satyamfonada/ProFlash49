@@ -1,0 +1,9 @@
+.card-header.custom-header-section.back-arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mat-icon{
+        cursor: pointer;
+    }
+}

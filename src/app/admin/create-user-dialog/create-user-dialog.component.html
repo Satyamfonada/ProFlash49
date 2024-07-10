@@ -1,0 +1,238 @@
+<div class="action-rows">
+    <h2 mat-dialog-title>Create User</h2>
+    <div>
+        <button mat-icon-button color="warn" [matTooltip]="isWide ? 'Fullscreen Exit' : 'Fullscreen'"
+            (click)="toggleDialogWidth()">
+            <mat-icon *ngIf="iconState === 'fullscreen'">fullscreen</mat-icon>
+            <mat-icon *ngIf="iconState === 'fullscreenExit'">fullscreen_exit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="cancel()">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</div>
+<mat-divider></mat-divider>
+
+<div mat-dialog-content>
+    <form [formGroup]="userManagementForm">
+        <div class="row">
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>User Id</mat-label>
+                    <input matInput placeholder="Ex. 5753421817" formControlName="userId" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Address</mat-label>
+                    <input matInput placeholder="Address" formControlName="address" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Password</mat-label>
+                    <input type="password" matInput placeholder="Password" formControlName="password" />
+                    <mat-error *ngIf="userManagementForm.get('password').invalid && (userManagementForm.get('password').dirty || userManagementForm.get('password').touched)">
+                        Password must be at least 8 characters long.
+                      </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Pan Number</mat-label>
+                    <input type="text" matInput placeholder="Pan Number" formControlName="panNumber" />
+                    <mat-error *ngIf="userManagementForm.get('panNumber').invalid && (userManagementForm.get('panNumber').dirty || userManagementForm.get('panNumber').touched)">
+                        Please enter a valid PAN number.
+                      </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>DLT Principal Entity Id</mat-label>
+                    <input type="text" matInput placeholder="DLT Principal Entity Id"
+                        formControlName="dltPrincipalEntityId" />
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>First Name</mat-label>
+                    <input matInput placeholder="Enter your first name" formControlName="firstName" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Email Id</mat-label>
+                    <input matInput placeholder="Enter your Email Id" formControlName="emailId" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" matInput placeholder="Confirm Password" formControlName="confirmPassword" />
+                    <mat-error *ngIf="userManagementForm.hasError('passwordMismatch') && (userManagementForm.get('confirmPassword').dirty || userManagementForm.get('confirmPassword').touched)">
+                        Passwords do not match.
+                      </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>TPS</mat-label>
+                    <input type="text" matInput placeholder="TPS" formControlName="tps" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Account Manager</mat-label>
+                    <input type="text" matInput placeholder="Account Manager" formControlName="accountManager" />
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field>
+                    <mat-label>Last Name</mat-label>
+                    <input matInput placeholder="Enter your last name" formControlName="lastName" />
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput placeholder="Enter your Mobile Number" formControlName="mobileNumber"  pattern="[0-9]*" (keydown)="onMobileNumberKeydown($event)"/>
+                    <mat-error *ngIf="userManagementForm.get('mobileNumber').hasError('maxlength')">
+                        Mobile number must be 10 digits long.
+                      </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>GST Number</mat-label>
+                    <input matInput placeholder="GST Number" formControlName="gstNumber" />
+                    <mat-error *ngIf="userManagementForm.get('gstNumber').invalid && (userManagementForm.get('gstNumber').dirty || userManagementForm.get('gstNumber').touched)">
+                        Please enter a valid GST number.
+                      </mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label>DLT Telemarketer Id</mat-label>
+                    <input matInput placeholder="DLT Telemarketer Id" formControlName="dltTelemarketerId" />
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label>Credit Deduction By</mat-label>
+                    <mat-select formControlName="creditDeductionBy">
+                        <mat-option value="Accepted">Accepted</mat-option>
+                        <mat-option value="Delivered">Delivered</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <label id="example-radio-group-label">Type Of Delivery Account</label><br>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group"
+                        formControlName="typeOfDeliveryAccount">
+                        <mat-radio-button class="example-radio-button" *ngFor="let list of typeOfDeliveryAccount"
+                            [value]="list">
+                            {{list}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+
+                </div>
+            </div>
+            <mat-spacer></mat-spacer>
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Country</mat-label>
+                        <mat-select formControlName="country">
+                            <mat-option value="India">India</mat-option>
+                            <mat-option value="Bangladesh">Bangladesh</mat-option>
+                            <mat-option value="Tanzania">Tanzania</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>Number of track link</mat-label>
+                        <input matInput placeholder="Ex: 1" formControlName="numberOfTrackLink" />
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Account Status</mat-label>
+                        <mat-select formControlName="accountStatus">
+                            <mat-option value="Postpaid">Postpaid</mat-option>
+                            <mat-option value="Postpaid">Prepaid</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Security</mat-label>
+                        <mat-select formControlName="security">
+                            <mat-option value="Standard">Standard</mat-option>
+                            <mat-option value="NoText">NoText</mat-option>
+                            <mat-option value="SecureStorage">SecureStorage</mat-option>
+                            <mat-option value="SecureStorageNoText">SecureStorageNoText</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Authorization</mat-label>
+                        <mat-select formControlName="authorization">
+                            <mat-option value="Power">Power</mat-option>
+                            <mat-option value="User">User</mat-option>
+                            <mat-option value="Userapi">Userapi</mat-option>
+                            <mat-option value="Create_userapi">Create_userapi</mat-option>
+                            <mat-option value="Userbu">Userbu</mat-option>
+                            <mat-option value="Powersender">Powersender</mat-option>
+                            <mat-option value="Usermtl">Usermtl</mat-option>
+                            <mat-option value="Powermtl">Powermtl</mat-option>
+                            <mat-option value="Usersoip">Usersoip</mat-option>
+                            <mat-option value="Usero">Usero</mat-option>
+                            <mat-option value="Powero">Powero</mat-option>
+                            <mat-option value="Users">Users</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+
+
+                    <mat-form-field>
+                        <mat-label>Account Expiry Date</mat-label>
+                        <input matInput [matDatepicker]="picker">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                </div>
+                <div class="col-md-4">
+                    <mat-checkbox formControlName="enableDndFiltering" class="enableFiltering">Enable DND
+                        Filtering</mat-checkbox>
+                    <mat-form-field>
+                        <mat-label>Track Link Domain</mat-label>
+                        <input matInput placeholder="Ex: Domain" formControlName="trackLinkDomain" />
+                    </mat-form-field>
+                </div>
+            </div>
+            <mat-spacer></mat-spacer>
+            <br>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div>
+                        <mat-label>Upload image</mat-label>
+                        <input type="file" (change)="onFileSelected($event)" formControlName="imageUpload">
+                        <small>
+                            Note: Image size should be of 30x30
+                        </small>
+                    </div>
+
+                </div>
+                <div class="col-md-6">
+                    <mat-card *ngIf="selectedFile">
+                        <mat-card-content>
+                            <img [src]="selectedFile" alt="Uploaded Image" class="uploadedImage">
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            <mat-spacer></mat-spacer>
+            <br>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Copyright Text</mat-label>
+                        <input matInput placeholder="Ex: Text" formControlName="copyrightText" />
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field>
+                        <mat-label>Allow From (IP)</mat-label>
+                        <input matInput placeholder="Ex: IP" formControlName="allowFromIp" />
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+</div>
+<mat-divider></mat-divider>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="createUserManagementList()">
+        {{actionBtn}}</button>
+</div>

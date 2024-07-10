@@ -1,0 +1,119 @@
+<!-- <div class="side-navigation__menu-button" (click)="expanded = !expanded">
+    <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-bars"></i>
+    <h3 class="side-navigation__menu-button-label">Menu</h3>
+  </div> -->
+
+
+<div [ngClass]="expanded ? 'expanded':'nonExpanded'" class="flex-shrink-0 p-3 bg-white side-navigation__menu-button"
+    style="width: 250px;">
+    <a (click)="toggleButton()" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none">
+        <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-bars"></i>
+        <span class="fs-5 fw-semibold">ProFlash49</span>
+    </a>
+    <div *ngIf="expanded">
+        <img src="assets/user2.png" alt="mdo" width="48" height="48" class="rounded-circle">
+        <strong>{{user?.firstName}}!</strong>
+        <div class="border-top my-3"></div>
+    </div>
+    <!-- <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-home"></i> General
+            </button>
+            <div class="collapse show" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-address-book"></i> Address
+                Books
+            </button>
+            <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a routerLink="/userBases" class="link-dark d-inline-flex text-decoration-none rounded">Manage</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#bulk-sms-collapse" aria-expanded="false">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-bullhorn"></i> Bulk SMS
+            </button>
+            <div class="collapse" id="bulk-sms-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a routerLink="/campaigns" class="link-dark d-inline-flex text-decoration-none rounded">Campaigns</a></li>
+                    <li><a routerLink="/executions" class="link-dark d-inline-flex text-decoration-none rounded">Executions</a></li>
+                    <li><a routerLink="/scheduled" class="link-dark d-inline-flex text-decoration-none rounded">Scheduled</a></li>
+                    <li><a routerLink="/http-api" class="link-dark d-inline-flex text-decoration-none rounded">HTTP</a></li>
+                    <li><a routerLink="/url-management" class="link-dark d-inline-flex text-decoration-none rounded">Url Management</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#template--management-collapse" aria-expanded="false">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-exchange"></i> Template
+                Management
+            </button>
+            <div class="collapse" id="template--management-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a routerLink="/manage-template" class="link-dark d-inline-flex text-decoration-none rounded">Manage Template</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#sender-management-collapse" aria-expanded="false">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-paper-plane"></i> Sender ID
+                Management
+            </button>
+            <div class="collapse" id="sender-management-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a routerLink="/request-sender" class="link-dark d-inline-flex text-decoration-none rounded">Request Sender</a></li>
+                </ul>
+            </div>
+        </li>
+
+        <li class="mb-1">
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse fa fa-bar-chart-o"></i> Reporting
+            </button>
+            <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a routerLink="/message-history" class="link-dark d-inline-flex text-decoration-none rounded">Message History</a>
+                    </li>
+                    <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">MIS Tool</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul> -->
+
+
+    <ul class="list-unstyled ps-0">
+        <li class="mb-1" *ngFor="let item of dropdownList; let i = index" (click)="toggleDropdown(i)">
+
+            <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                data-bs-toggle="collapse" data-bs-target="#index" [attr.aria-expanded]="isExpand(i)">
+                <i class="side-navigation__menu-button-icon icon-white icon-inverse {{item.icon}}"></i> {{ item.menu }}
+            </button>
+            <div class="collapse show" id="{{i}}">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" *ngIf="item.showDropdown">
+                    <li *ngFor="let dropdownItem of item.dropdown" (click)="navigateTo(dropdownItem.route)"><a
+                            class="link-dark d-inline-flex text-decoration-none rounded" routerLink="dropdownItem.route"
+                            routerLinkActive="active"
+                            [routerLinkActiveOptions]="{exact: true}">{{dropdownItem.title}}</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

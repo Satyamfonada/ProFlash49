@@ -1,0 +1,24 @@
+.input-fields-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    mat-form-field {
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    button{
+        position: relative;
+        top: 10px;
+    }
+    .date-range-section{
+        width: 45%;
+    }
+}
+
+.custom-header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
