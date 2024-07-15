@@ -14,11 +14,12 @@ export class SideNavigationComponent {
   activeIndex = 0;
   user: User | null;
   constructor(private accountService: AccountService, private router: Router) {
-    this.user = this.accountService.userValue;
+    // this.user = this.accountService.userValue
+    const session = JSON.parse(sessionStorage.getItem('user')!);
+    this.user=session.result.username
   }
   ngOnInit() {
     let isAdmin = this.accountService.hasRole('admin');
-    console.log(isAdmin, "isAdmin....");
     if ((isAdmin['username'] != 'admin')) {
       this.dropdownList = this.dropdownList.filter(item => {
         return item.menu === 'General' || item.menu === 'Address' || item.menu === 'Bulk SMS' || item.menu === 'Template Management' || item.menu === 'Sender ID Management' || item.menu === 'Reporting';

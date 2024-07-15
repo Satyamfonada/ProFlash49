@@ -27,7 +27,6 @@ export class AccountService {
 
     hasRole(role: string) {
         const user = this.userValue;
-        console.log(this.userValue, "User");
         return user;
         // return user && user.roles && user.roles.includes(role);
     }

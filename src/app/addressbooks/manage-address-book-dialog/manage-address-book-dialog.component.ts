@@ -66,12 +66,10 @@ export class ManageAddressBookDialogComponent {
       data: this.data,
     });
     dialogRef.afterClosed().subscribe((val) => {
-      console.log(val, "Value....")
       this.repositoryListAPI.postNewEntry(val.data)
         .subscribe({
           next: (res) => {
             alert("New Entry Added Successfully.");
-            console.log(res, "Res....")
             this.getNewAddedEntry();
           },
           error: () => {

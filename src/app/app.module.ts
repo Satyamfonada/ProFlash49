@@ -19,7 +19,9 @@ import { MatDatepickerModule } from '@angular/material/datepicker'
 import { MatSelectModule } from '@angular/material/select';
 import { NgChartsModule } from 'ng2-charts';
 import { AddressbooksComponent } from './addressbooks/addressbooks.component';
-import { MatTableModule } from '@angular/material/table'
+import { MatTableModule } from '@angular/material/table';
+import {MatSliderModule} from '@angular/material/slider';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { RepositoryDialogComponent } from './addressbooks/repository-dialog/repository-dialog.component';
 import { MatIconModule } from '@angular/material/icon'
@@ -97,7 +99,9 @@ import { ReportFormComponent } from './reporting/report-form/report-form.compone
         MatTooltipModule,
         MatCardModule,
         MatMenuModule,
-        MatRadioModule
+        MatRadioModule,
+        MatSliderModule,
+        MatSlideToggleModule
     ],
     declarations: [
         AppComponent,

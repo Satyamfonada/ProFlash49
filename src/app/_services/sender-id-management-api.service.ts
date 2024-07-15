@@ -23,6 +23,20 @@ export class SenderIdManagementAPIService {
  
      return this.http.post<any>(url, data, { headers });
   }
+
+  updatwSenderIdManagement(data:any){
+    const url = `${this.apiUrl}/smsPlatform/sender/updateSender`;
+     const session = JSON.parse(sessionStorage.getItem('user')!);
+     const headers = new HttpHeaders({
+       'Content-Type': 'application/json',
+       'Cookie': 'SERVER=web2',
+       'Authorization': `Bearer ${session ? session.result.token : null}`
+     });
+ 
+     return this.http.post<any>("http://fuat.flash49.com/smsplatform/sender/updateSender", data, { headers });
+  }
+
+
   getSenderIdManagement() {
     const session = JSON.parse(sessionStorage.getItem('user')!);
     const token = session?.result?.token;

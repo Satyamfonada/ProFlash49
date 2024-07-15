@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-    
+
 
         // reset alerts on submit
         this.alertService.clear();
@@ -49,9 +49,6 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe({
                 next: (res) => {
-                    console.log(res)
-                  // Assuming res contains the token and user information
-                //   sessionStorage.setItem('token', res.result.token);
                     // get return url from query parameters or default to home page
                     // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
                     // this.router.navigateByUrl(returnUrl);
@@ -62,7 +59,7 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 }
             });
-            
+
     }
-    
+
 }

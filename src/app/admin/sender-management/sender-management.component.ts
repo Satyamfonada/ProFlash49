@@ -31,7 +31,6 @@ export class SenderManagementComponent {
   getAllSenderManagementList() {
     this.senderManagementApi.getSenderManagement().subscribe({
       next: (res) => {
-        console.log(res, "uploaded.......")
         let newArr=[];
         for(let i = 0; i < res.length; i++){
           if(res[i].length > 0){
@@ -44,7 +43,6 @@ export class SenderManagementComponent {
           }
 
         }
-        console.log(newArr, "newArr.......")
         this.dataSource = new MatTableDataSource(res);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;

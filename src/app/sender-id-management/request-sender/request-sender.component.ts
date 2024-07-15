@@ -56,6 +56,7 @@ export class RequestSenderComponent {
       width: '500px',
       data: row,
     }).afterClosed().subscribe(val => {
+      this.getSenderIdManagementList();
       if (val === 'update') {
         this.getSenderIdManagementList();
       }

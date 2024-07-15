@@ -14,21 +14,25 @@ export class UrlDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<UrlDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public updateUrls: any,
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private formBuilder: FormBuilder,
     private urlManagmentAPI: UrlManagementAPIService,
   ) {
 
   }
   ngOnInit(): void{
+    const session = JSON.parse(sessionStorage.getItem('user')!);
     this.urlManagementForm = this.formBuilder.group({
-      urlTitle:['', Validators.required],
-      shortUrl:['', Validators.required]
+      title:['', Validators.required],
+      url:['', Validators.required],
+      clientId: session ? session.userId : null,
     })
 
     if(this.updateUrls){
       this.actionBtn = "Update";
-      this.urlManagementForm.controls['urlTitle'].setValue(this.updateUrls.urlTitle);
-      this.urlManagementForm.controls['shortUrl'].setValue(this.updateUrls.shortUrl);
+      this.urlManagementForm.controls['title'].setValue(this.updateUrls.title);
+      this.urlManagementForm.controls['url'].setValue(this.updateUrls.url);
+      this.urlManagementForm.patchValue({tempalateId:this.data.templateId})
     }
   }
 
@@ -38,7 +42,6 @@ export class UrlDialogComponent {
        this.urlManagmentAPI.postUrlManagement(this.urlManagementForm.value)
        .subscribe({
          next: (res) =>{
-           alert("URL Title Added Successfully.");
            this.urlManagementForm.reset();
            this.dialogRef.close('create');
          },

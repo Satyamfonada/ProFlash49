@@ -12,7 +12,7 @@ import { UrlDialogComponent } from './url-dialog/url-dialog.component';
   styleUrls: ['./url-management.component.scss']
 })
 export class UrlManagementComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'urlTitle', 'shortUrl', 'actions'];
+  displayedColumns: string[] = ['id', 'urlTitle', 'shortUrl','status', 'actions'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
@@ -40,7 +40,7 @@ export class UrlManagementComponent implements OnInit {
     this.urlManagmentAPI.getUrlManagement()
       .subscribe({
         next: (res) => {
-          this.dataSource = new MatTableDataSource(res);
+          this.dataSource = new MatTableDataSource(res.Data);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
         },
@@ -81,5 +81,11 @@ export class UrlManagementComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+  updateActiveStatus(element: any): void {
+    element.status = element.status === 1 ? 0 : 1;
+    this.urlManagmentAPI.updateUrlStatus(element.trackingId, element.status).subscribe(response => {
+      alert(response.msg);
+    });
   }
 }

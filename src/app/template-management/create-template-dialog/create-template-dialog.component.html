@@ -9,16 +9,16 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Campaign Type</mat-label>
-            <mat-select formControlName="campaignType">
-                <mat-option value="Transactional">Transactional</mat-option>
-                <mat-option value="Promotional">Promotional</mat-option>
+            <mat-select formControlName="campType">
+                <mat-option value="trans">Transactional</mat-option>
+                <mat-option value="pro">Promotional</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Senders</mat-label>
-            <mat-select formControlName="senders">
-                <mat-option value="Senders1">Senders1</mat-option>
-                <mat-option value="Senders2">Senders2</mat-option>
+            <mat-select formControlName="senderCode">
+                <mat-option value="1">FONADA</mat-option>
+                <mat-option value="2">RYTHUS</mat-option>
             </mat-select>
         </mat-form-field>
             <mat-form-field appearance="fill">
@@ -30,7 +30,7 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>DLT Content Id</mat-label>
-            <input matInput placeholder="" formControlName="dLTContentId" />
+            <input matInput placeholder="" formControlName="dltCtId" />
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Template Text</mat-label>
@@ -42,6 +42,6 @@
 </div>
 <mat-divider></mat-divider>
 <div mat-dialog-actions>
-    <button mat-raised-button color="primary" (click)="createNewShortenedUrl()">{{actionBtn}}</button>
+    <button mat-raised-button color="primary" (click)="handleButtonClick()">{{actionBtn}}</button>
     <button mat-button color="warn" (click)="cancel()">Cancel</button>
 </div>

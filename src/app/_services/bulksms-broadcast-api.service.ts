@@ -9,7 +9,6 @@ export class BulkSmsBroadcastAPIService {
   constructor(private http: HttpClient) { }
 
   postBulkSmsBoradcast(data:any){
-    console.log('iiiiiiiiiiiiii', data)
     return this.http.post<any>("http://localhost:3000/bulkSmsBroadcast/", data)
   }
   getBulkSmsBoradcast(){
