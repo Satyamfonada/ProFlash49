@@ -21,6 +21,7 @@ export class UrlDialogComponent {
 
   }
   ngOnInit(): void{
+    debugger
     const session = JSON.parse(sessionStorage.getItem('user')!);
     this.urlManagementForm = this.formBuilder.group({
       title:['', Validators.required],
@@ -32,10 +33,17 @@ export class UrlDialogComponent {
       this.actionBtn = "Update";
       this.urlManagementForm.controls['title'].setValue(this.updateUrls.title);
       this.urlManagementForm.controls['url'].setValue(this.updateUrls.url);
-      this.urlManagementForm.patchValue({tempalateId:this.data.templateId})
+      this.urlManagementForm.patchValue({longUrlId:this.data.longUrlId})
     }
   }
+  handleButtonClick(): void {
+    if (this.updateUrls) {
+      this.updateUrlManagement();
 
+    } else {
+      this.createNewShortenedUrl();
+    }
+  }
   createNewShortenedUrl() {
     if(!this.updateUrls){
      if(this.urlManagementForm.valid){
@@ -57,7 +65,7 @@ export class UrlDialogComponent {
    }
  
    updateUrlManagement(){
-     this.urlManagmentAPI.putUrlManagement(this.urlManagementForm.value, this.updateUrls.id)
+     this.urlManagmentAPI.putUrlManagement(this.urlManagementForm.value)
      .subscribe({
        next:(res) =>{
          alert("URL Title Updated Successfully");

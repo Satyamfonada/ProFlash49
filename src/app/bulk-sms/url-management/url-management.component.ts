@@ -83,8 +83,8 @@ export class UrlManagementComponent implements OnInit {
     }
   }
   updateActiveStatus(element: any): void {
-    element.status = element.status === 1 ? 0 : 1;
-    this.urlManagmentAPI.updateUrlStatus(element.trackingId, element.status).subscribe(response => {
+    element.isActive = element.isActive === 1 ? 0 : 1;
+    this.urlManagmentAPI.updateUrlStatus(element.trackingId, element.isActive).subscribe(response => {
       alert(response.msg);
     });
   }
