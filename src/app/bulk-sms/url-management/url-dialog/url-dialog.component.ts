@@ -26,6 +26,7 @@ export class UrlDialogComponent {
     this.urlManagementForm = this.formBuilder.group({
       title:['', Validators.required],
       url:['', Validators.required],
+      longUrlId:[''],
       clientId: session ? session.userId : null,
     })
 
