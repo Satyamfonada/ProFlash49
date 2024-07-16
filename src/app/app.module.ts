@@ -2,10 +2,8 @@ import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
-
 import { AppRoutingModule } from './app-routing.module';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { AppComponent } from './app.component';
@@ -20,8 +18,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { NgChartsModule } from 'ng2-charts';
 import { AddressbooksComponent } from './addressbooks/addressbooks.component';
 import { MatTableModule } from '@angular/material/table';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { RepositoryDialogComponent } from './addressbooks/repository-dialog/repository-dialog.component';
 import { MatIconModule } from '@angular/material/icon'
@@ -50,11 +48,11 @@ import { RequestSenderComponent } from './sender-id-management/request-sender/re
 import { RequestSenderDialogComponent } from './sender-id-management/request-sender-dialog/request-sender-dialog.component';
 import { MessageHistoryComponent } from './reporting/message-history/message-history.component';
 import { MatCardModule } from '@angular/material/card';
-import {MatMenuModule} from '@angular/material/menu';
+import { MatMenuModule } from '@angular/material/menu';
 import { ActionButtonsComponent } from './shared/action-buttons/action-buttons.component';
 import { UserManagementComponent } from './admin/user-management/user-management.component';
 import { CreateUserDialogComponent } from './admin/create-user-dialog/create-user-dialog.component';
-import {MatRadioModule} from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
 import { ResetPasswordDialogComponent } from './admin/reset-password-dialog/reset-password-dialog.component';
 import { SenderManagementComponent } from './admin/sender-management/sender-management.component';
 import { CreateNewSenderDialogComponent } from './admin/create-new-sender-dialog/create-new-sender-dialog.component';
@@ -70,8 +68,6 @@ import { AddPropertyDialogComponent } from './admin/add-property-dialog/add-prop
 import { SettingsActionDialogComponent } from './admin/settings-action-dialog/settings-action-dialog.component';
 import { MisToolReportingComponent } from './reporting/mis-tool-reporting/mis-tool-reporting.component';
 import { ReportFormComponent } from './reporting/report-form/report-form.component';
-
-
 @NgModule({
     imports: [
         BrowserModule,
@@ -150,14 +146,12 @@ import { ReportFormComponent } from './reporting/report-form/report-form.compone
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
         { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-
         // provider used to create fake backend
         fakeBackendProvider
     ],
     bootstrap: [AppComponent],
     schemas: [
         CUSTOM_ELEMENTS_SCHEMA
-      ]
-
+    ]
 })
 export class AppModule { };

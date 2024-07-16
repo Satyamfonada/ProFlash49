@@ -6,7 +6,6 @@ import { ExecutionsComponent } from './bulk-sms/executions/executions.component'
 import { HttpApiComponent } from './bulk-sms/http-api/http-api.component';
 import { ScheduledComponent } from './bulk-sms/scheduled/scheduled.component';
 import { UrlManagementComponent } from './bulk-sms/url-management/url-management.component';
-
 import { DashboardComponent } from './dashboard';
 import { AuthGuard } from './_helpers';
 import { ManageTemplateComponent } from './template-management/manage-template/manage-template.component';
@@ -18,10 +17,8 @@ import { RouteManagementComponent } from './admin/route-management/route-managem
 import { FilterManagementComponent } from './admin/filter-management/filter-management.component';
 import { MisToolReportingComponent } from './reporting/mis-tool-reporting/mis-tool-reporting.component';
 import { ReportFormComponent } from './reporting/report-form/report-form.component';
-
 const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
 const usersModule = () => import('./users/users.module').then(x => x.UsersModule);
-
 const routes: Routes = [
     { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
     { path: 'userBases', component: AddressbooksComponent, canActivate: [AuthGuard] },
@@ -41,11 +38,8 @@ const routes: Routes = [
     { path: 'filter-management', component: FilterManagementComponent, canActivate: [AuthGuard] },
     { path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
     { path: 'account', loadChildren: accountModule },
-
-    // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
-
 @NgModule({
     imports: [RouterModule.forRoot(routes)],
     exports: [RouterModule]

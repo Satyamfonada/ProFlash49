@@ -21,7 +21,6 @@ export class UrlDialogComponent {
 
   }
   ngOnInit(): void{
-    debugger
     const session = JSON.parse(sessionStorage.getItem('user')!);
     this.urlManagementForm = this.formBuilder.group({
       title:['', Validators.required],

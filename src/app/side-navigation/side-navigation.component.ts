@@ -16,7 +16,7 @@ export class SideNavigationComponent {
   constructor(private accountService: AccountService, private router: Router) {
     // this.user = this.accountService.userValue
     const session = JSON.parse(sessionStorage.getItem('user')!);
-    this.user=session.result.username
+    this.user = session?.result?.username || "Foanda"
   }
   ngOnInit() {
     let isAdmin = this.accountService.hasRole('admin');
@@ -25,7 +25,7 @@ export class SideNavigationComponent {
         return item.menu === 'General' || item.menu === 'Address' || item.menu === 'Bulk SMS' || item.menu === 'Template Management' || item.menu === 'Sender ID Management' || item.menu === 'Reporting';
       });
     }
-   
+
     this.isExpand(0);
   }
   toggleButton() {
@@ -49,8 +49,8 @@ export class SideNavigationComponent {
         { title: 'Senders Management', route: "/senders-management" },
         { title: 'Routes Management', route: "/route-management" },
         { title: 'Filter Management', route: "/filter-management" },
-      ], 
-        showDropdown: true
+      ],
+      showDropdown: true
     },
     {
       menu: 'Address',
