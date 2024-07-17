@@ -33,7 +33,7 @@ export class SimpleBroadcastDialogComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.simpleBroadcastUpdate, "DDDDDDDDDDDD");
+    console.log(this.simpleBroadcastUpdate, "Simple Broadcast Update");
     this.simpleBroadcastForm = this.formBuilder.group({
       campaignName: ['', Validators.required],
       connectionType: new FormControl(),

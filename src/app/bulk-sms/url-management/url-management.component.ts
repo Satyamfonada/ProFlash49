@@ -12,7 +12,7 @@ import { UrlDialogComponent } from './url-dialog/url-dialog.component';
   styleUrls: ['./url-management.component.scss']
 })
 export class UrlManagementComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'urlTitle', 'shortUrl','status', 'actions'];
+  displayedColumns: string[] = ['id', 'urlTitle', 'shortUrl','trackingID','status', 'actions'];
   dataSource!: MatTableDataSource<any>;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
