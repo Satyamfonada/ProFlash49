@@ -16,15 +16,13 @@ export class AccountService {
         private router: Router,
         private http: HttpClient,
     ) {
-        this.userSubject = new BehaviorSubject(JSON.parse(localStorage.getItem('user')!));
+        this.userSubject = new BehaviorSubject(JSON.parse(sessionStorage.getItem('user')!));
         this.user = this.userSubject.asObservable();
         this.apiUrl = environment.apiUrl;
     }
-
     public get userValue() {
         return this.userSubject.value;
     }
-
     hasRole(role: string) {
         const user = this.userValue;
         return user;
@@ -71,8 +69,7 @@ export class AccountService {
                 if (id == this.userValue?.id) {
                     // update local storage
                     const user = { ...this.userValue, ...params };
-                    localStorage.setItem('user', JSON.stringify(user));
-
+                    sessionStorage.setItem('user', JSON.stringify(user));
                     // publish updated user to subscribers
                     this.userSubject.next(user);
                 }

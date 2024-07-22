@@ -31,7 +31,6 @@ export class SideNavigationComponent {
   toggleButton() {
     this.expanded = !this.expanded;
     this.isExpanded = false;
-
   }
 
   dropdownList = [
@@ -117,6 +116,7 @@ export class SideNavigationComponent {
 
   isExpand(index: number) {
     return index === this.activeIndex ? "true" : "false";
+   
   }
   navigateTo(route: string) {
     this.router.navigate([route]);
