@@ -12,7 +12,6 @@
     </div>
 </div>
 <mat-divider></mat-divider>
-
 <div mat-dialog-content>
     <form [formGroup]="simpleBroadcastForm">
         <mat-form-field>
@@ -21,9 +20,9 @@
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Connection Type</mat-label>
-            <mat-select formControlName="connectionType">
-                <mat-option value="Transactional">Transactional</mat-option>
-                <mat-option value="Promotional">Promotional</mat-option>
+            <mat-select formControlName="tempMsgVarType">
+                <mat-option value="trans">Transactional</mat-option>
+                <mat-option value="pro">Promotional</mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
@@ -61,7 +60,7 @@
         <br><br>
         <mat-form-field>
             <mat-label>DLT Content ID</mat-label>
-            <input matInput placeholder="Ex. Camp_96591" formControlName="dltContentId" />
+            <input matInput placeholder="Ex. Camp_96591" formControlName="dltContentId" (blur)="findMessageByDLT()" [(ngModel)]="dltctidValue"/>
         </mat-form-field>
 
         <mat-form-field>
@@ -89,6 +88,8 @@
     <button mat-raised-button (click)="messagePreview()"><mat-icon>mobile_screen_share</mat-icon> SMS Priview</button>
     <button mat-raised-button color="accent" (click)="createSimpleBroadcast('save')"><mat-icon>save</mat-icon>
         {{actionBtn}}</button>
-    <button mat-raised-button color="warn" (click)="createSimpleBroadcast('execute')"><mat-icon>play_arrow</mat-icon> Save and Execute</button>
-    <button mat-raised-button color="primary" (click)="createSimpleBroadcast('schedule')"><mat-icon>schedule</mat-icon> Save and Schedule</button>
+    <button mat-raised-button color="warn" (click)="createSimpleBroadcast('execute')"><mat-icon>play_arrow</mat-icon>
+        Save and Execute</button>
+    <button mat-raised-button color="primary" (click)="createSimpleBroadcast('schedule')"><mat-icon>schedule</mat-icon>
+        Save and Schedule</button>
 </div>

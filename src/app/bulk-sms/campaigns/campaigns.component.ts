@@ -77,14 +77,13 @@ export class CampaignsComponent {
           this.dataSource.sort = this.sort;
         },
         error: (err) => {
-          alert("Error while fetching the Records.")
+          console.log("Error while fetching the Records.")
         }
       })
   }
 
 
   editRow(row: any) {
-    console.log(row, "rrrrrrrrrrrrrrrrrrrrr");
     if (row['flag'] == 'Simple') {
       this.dialog.open(SimpleBroadcastDialogComponent, { width: '500px', data: row })
         .afterClosed().subscribe(val => {
