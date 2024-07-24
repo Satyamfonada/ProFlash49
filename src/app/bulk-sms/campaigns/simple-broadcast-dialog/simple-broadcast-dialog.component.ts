@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef, MAT_DIALOG_DATA } from '@angu
 import { BulkSmsBroadcastAPIService } from 'src/app/_services/bulksms-broadcast-api.service';
 import { SelectAddressBookDialogComponent } from '../select-address-book-dialog/select-address-book-dialog.component';
 import { MessagePreviewDialogComponent } from '../message-preview-dialog/message-preview-dialog.component';
+import { DatetimepickerComponent } from '../datetimepicker/datetimepicker.component';
 @Component({
   selector: 'app-simple-broadcast-dialog',
   templateUrl: './simple-broadcast-dialog.component.html',
@@ -82,7 +83,15 @@ export class SimpleBroadcastDialogComponent implements OnInit {
       }
     });
   }
+  pickTime(){
+    this.dialog.open(DatetimepickerComponent,{
+      width:'40%',
+      data:{}
+
+    })
+  }
   createSimpleBroadcast(val) {
+    this.pickTime()
     const campaignJson = {};
     campaignJson['dltContentId'] = this.simpleBroadcastForm.get('dltContentId').value;
     campaignJson['tempMsgVarType'] = "Positional";
@@ -129,7 +138,7 @@ export class SimpleBroadcastDialogComponent implements OnInit {
     }
     this.bulkSmsBroadcastAPIService.findMessageByDLT(this.dltctidValue).subscribe({
       next: (res) => {
-        this.myTextarea = res?.Data || '';
+        this.myTextarea = res?.Data || 'If &${name} have an existing ${amount} credit card bill, Pay it now to avoid the late fee charges!';
       },
       error: (err) => {
         console.warn('Error fetching message by DLT:', err);

@@ -68,6 +68,7 @@ import { AddPropertyDialogComponent } from './admin/add-property-dialog/add-prop
 import { SettingsActionDialogComponent } from './admin/settings-action-dialog/settings-action-dialog.component';
 import { MisToolReportingComponent } from './reporting/mis-tool-reporting/mis-tool-reporting.component';
 import { ReportFormComponent } from './reporting/report-form/report-form.component';
+import { DatetimepickerComponent } from './bulk-sms/campaigns/datetimepicker/datetimepicker.component';
 @NgModule({
     imports: [
         BrowserModule,
@@ -141,7 +142,8 @@ import { ReportFormComponent } from './reporting/report-form/report-form.compone
         AddPropertyDialogComponent,
         SettingsActionDialogComponent,
         MisToolReportingComponent,
-        ReportFormComponent
+        ReportFormComponent,
+        DatetimepickerComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
