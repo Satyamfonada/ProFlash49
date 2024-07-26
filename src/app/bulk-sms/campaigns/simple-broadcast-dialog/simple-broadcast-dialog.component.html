@@ -16,11 +16,11 @@
     <form [formGroup]="simpleBroadcastForm">
         <mat-form-field>
             <mat-label>Name</mat-label>
-            <input matInput placeholder="Ex. Camp_96591" formControlName="campaignName" />
+            <input matInput placeholder="Ex. Camp_96591" formControlName="name" />
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Connection Type</mat-label>
-            <mat-select formControlName="tempMsgVarType">
+            <mat-select formControlName="campaignMessageType">
                 <mat-option value="trans">Transactional</mat-option>
                 <mat-option value="pro">Promotional</mat-option>
             </mat-select>
@@ -70,7 +70,7 @@
 
         <mat-form-field appearance="fill">
             <mat-label>Message</mat-label>
-            <textarea matInput formControlName="message" [(ngModel)]="myTextarea"
+            <textarea matInput formControlName="campaignMessage" [(ngModel)]="myTextarea"
                 (input)="updateCharCount()"></textarea>
         </mat-form-field>
         <div class="messageCounts" *ngIf="charCount">

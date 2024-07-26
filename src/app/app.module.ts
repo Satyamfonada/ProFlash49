@@ -69,6 +69,8 @@ import { SettingsActionDialogComponent } from './admin/settings-action-dialog/se
 import { MisToolReportingComponent } from './reporting/mis-tool-reporting/mis-tool-reporting.component';
 import { ReportFormComponent } from './reporting/report-form/report-form.component';
 import { DatetimepickerComponent } from './bulk-sms/campaigns/datetimepicker/datetimepicker.component';
+
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -98,7 +100,8 @@ import { DatetimepickerComponent } from './bulk-sms/campaigns/datetimepicker/dat
         MatMenuModule,
         MatRadioModule,
         MatSliderModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatDatepickerModule
     ],
     declarations: [
         AppComponent,

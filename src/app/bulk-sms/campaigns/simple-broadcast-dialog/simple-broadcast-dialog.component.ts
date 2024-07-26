@@ -31,8 +31,9 @@ export class SimpleBroadcastDialogComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.simpleBroadcastForm = this.formBuilder.group({
-      campaignName: ['', Validators.required],
+      name: ['', Validators.required],
       tempMsgVarType: new FormControl(),
+      campaignMessageType:[Validators.required],
       from: new FormControl(),
       to: ['', Validators.required],
       fileName: ['', Validators.required],
@@ -41,11 +42,12 @@ export class SimpleBroadcastDialogComponent implements OnInit {
       flashMessage: ['', Validators.required],
       dltContentId: ['', Validators.required],
       dltEntityId: ['', Validators.required],
-      message: ['', Validators.required],
+      campaignMessage: ['', Validators.required],
+      userCode: [Validators.required]    //Userd id from session
     });
     if (this.simpleBroadcastUpdate) {
       this.actionBtn = "Update";
-      this.simpleBroadcastForm.controls['campaignName'].setValue(this.simpleBroadcastUpdate.campaignName);
+      this.simpleBroadcastForm.controls['name'].setValue(this.simpleBroadcastUpdate.name);
       this.simpleBroadcastForm.controls['tempMsgVarType'].setValue(this.simpleBroadcastUpdate.tempMsgVarType);
       this.simpleBroadcastForm.controls['from'].setValue(this.simpleBroadcastUpdate.from);
       this.simpleBroadcastForm.controls['to'].setValue(this.simpleBroadcastUpdate.to);
@@ -55,7 +57,7 @@ export class SimpleBroadcastDialogComponent implements OnInit {
       this.simpleBroadcastForm.controls['flashMessage'].setValue(this.simpleBroadcastUpdate.flashMessage);
       this.simpleBroadcastForm.controls['dltContentId'].setValue(this.simpleBroadcastUpdate.dltContentId);
       this.simpleBroadcastForm.controls['dltEntityId'].setValue(this.simpleBroadcastUpdate.dltEntityId);
-      this.simpleBroadcastForm.controls['message'].setValue(this.simpleBroadcastUpdate.message);
+      this.simpleBroadcastForm.controls['campaignMessage'].setValue(this.simpleBroadcastUpdate.campaignMessage);
     }
     this.updateDialogSize();
   }
@@ -83,24 +85,24 @@ export class SimpleBroadcastDialogComponent implements OnInit {
       }
     });
   }
-  pickTime(){
-    this.dialog.open(DatetimepickerComponent,{
-      width:'40%',
-      data:{}
-
+  pickTime() {
+    this.dialog.open(DatetimepickerComponent, {
+      width: '40%',
+      data: {}
     })
   }
   createSimpleBroadcast(val) {
-    this.pickTime()
+    // this.pickTime()
+    const session = JSON.parse(sessionStorage.getItem('user')!);
     const campaignJson = {};
     campaignJson['dltContentId'] = this.simpleBroadcastForm.get('dltContentId').value;
     campaignJson['tempMsgVarType'] = "Positional";
     campaignJson['unicode'] = "0";
     campaignJson['messagePdu'] = 1;
-    campaignJson['name'] = this.simpleBroadcastForm.get('campaignName').value;
-    campaignJson['campaignMessage'] = this.simpleBroadcastForm.get('message').value;
-    campaignJson['userCode'] = 1;
-    campaignJson['campaignMessageType'] = "pro";
+    campaignJson['name'] = this.simpleBroadcastForm.get('name').value;
+    campaignJson['campaignMessage'] = this.simpleBroadcastForm.get('campaignMessage').value;
+    campaignJson['userCode'] = session ? session.userId : null,
+    campaignJson['campaignMessageType'] = this.simpleBroadcastForm.get("campaignMessageType").value;
     campaignJson['senderId'] = "1";
     campaignJson['toc'] = "sms";
     campaignJson['excecutionCampaign'] = {
@@ -113,6 +115,8 @@ export class SimpleBroadcastDialogComponent implements OnInit {
     let payload = {
       campaignJson: JSON.stringify(campaignJson)
     }
+    console.warn(payload)
+    return
     if (!this.simpleBroadcastUpdate) {
       if (this.simpleBroadcastForm.valid) {
         this.simpleBroadcastForm.value['flag'] = 'Simple';

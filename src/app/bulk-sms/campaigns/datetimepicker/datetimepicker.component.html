@@ -1,13 +1,8 @@
-
-
-
 <h2 mat-dialog-title>Please select the date and time</h2>
 <mat-dialog-content align="center">
   <mat-form-field>
-    <mat-label>Select a date</mat-label>
-    <input matInput [matDatepicker]="picker" [formControl]="date">
-    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
+    <mat-label>Select a date and time</mat-label>
+    <input matInput type="datetime-local" [formControl]="date">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
