@@ -69,6 +69,7 @@ import { SettingsActionDialogComponent } from './admin/settings-action-dialog/se
 import { MisToolReportingComponent } from './reporting/mis-tool-reporting/mis-tool-reporting.component';
 import { ReportFormComponent } from './reporting/report-form/report-form.component';
 import { DatetimepickerComponent } from './bulk-sms/campaigns/datetimepicker/datetimepicker.component';
+import { PhoneNumberFormatterDirective } from './shared/phone-number-formatter.directive';
 
 
 @NgModule({
@@ -146,7 +147,8 @@ import { DatetimepickerComponent } from './bulk-sms/campaigns/datetimepicker/dat
         SettingsActionDialogComponent,
         MisToolReportingComponent,
         ReportFormComponent,
-        DatetimepickerComponent
+        DatetimepickerComponent,
+        PhoneNumberFormatterDirective
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

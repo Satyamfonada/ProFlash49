@@ -5,6 +5,7 @@ import { BulkSmsBroadcastAPIService } from 'src/app/_services/bulksms-broadcast-
 import { SelectAddressBookDialogComponent } from '../select-address-book-dialog/select-address-book-dialog.component';
 import { MessagePreviewDialogComponent } from '../message-preview-dialog/message-preview-dialog.component';
 import { DatetimepickerComponent } from '../datetimepicker/datetimepicker.component';
+import { SenderIdManagementAPIService } from 'src/app/_services/sender-id-management-api.service';
 @Component({
   selector: 'app-simple-broadcast-dialog',
   templateUrl: './simple-broadcast-dialog.component.html',
@@ -27,13 +28,14 @@ export class SimpleBroadcastDialogComponent implements OnInit {
     private formBuilder: FormBuilder,
     private dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public simpleBroadcastUpdate: any,
-    private bulkSmsBroadcastAPIService: BulkSmsBroadcastAPIService
+    private bulkSmsBroadcastAPIService: BulkSmsBroadcastAPIService,
+    private senderIdManagementAPI: SenderIdManagementAPIService,
   ) { }
   ngOnInit(): void {
     this.simpleBroadcastForm = this.formBuilder.group({
       name: ['', Validators.required],
       tempMsgVarType: new FormControl(),
-      campaignMessageType:[Validators.required],
+      campaignMessageType: [Validators.required],
       from: new FormControl(),
       to: ['', Validators.required],
       fileName: ['', Validators.required],
@@ -60,6 +62,7 @@ export class SimpleBroadcastDialogComponent implements OnInit {
       this.simpleBroadcastForm.controls['campaignMessage'].setValue(this.simpleBroadcastUpdate.campaignMessage);
     }
     this.updateDialogSize();
+    this.getSenderIdManagementList()
   }
   updateCharCount() {
     let charCount = this.myTextarea.replace(/[€^{}\[\]~|]/g, '__').length;
@@ -92,7 +95,7 @@ export class SimpleBroadcastDialogComponent implements OnInit {
     })
   }
   createSimpleBroadcast(val) {
-    // this.pickTime()
+    this.pickTime()
     const session = JSON.parse(sessionStorage.getItem('user')!);
     const campaignJson = {};
     campaignJson['dltContentId'] = this.simpleBroadcastForm.get('dltContentId').value;
@@ -102,7 +105,7 @@ export class SimpleBroadcastDialogComponent implements OnInit {
     campaignJson['name'] = this.simpleBroadcastForm.get('name').value;
     campaignJson['campaignMessage'] = this.simpleBroadcastForm.get('campaignMessage').value;
     campaignJson['userCode'] = session ? session.userId : null,
-    campaignJson['campaignMessageType'] = this.simpleBroadcastForm.get("campaignMessageType").value;
+      campaignJson['campaignMessageType'] = this.simpleBroadcastForm.get("campaignMessageType").value;
     campaignJson['senderId'] = "1";
     campaignJson['toc'] = "sms";
     campaignJson['excecutionCampaign'] = {
@@ -148,6 +151,21 @@ export class SimpleBroadcastDialogComponent implements OnInit {
         console.warn('Error fetching message by DLT:', err);
       }
     });
+  }
+  Senderlist: any[]
+  getSenderIdManagementList() {
+    this.senderIdManagementAPI.getSenderIdManagement()
+      .subscribe({
+        next: (res) => {
+          if (res && res.Data) {
+            this.Senderlist = res?.Data
+          }
+
+        },
+        error: (err) => {
+          alert("Error while fetching the Records.")
+        }
+      })
   }
   updatesSimpleBroadcast(val) {
     this.simpleBroadcastForm.value['flag'] = 'Simple';

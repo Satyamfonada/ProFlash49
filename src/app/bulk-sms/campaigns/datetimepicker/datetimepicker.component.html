@@ -1,9 +1,11 @@
 <h2 mat-dialog-title>Please select the date and time</h2>
 <mat-dialog-content align="center">
-  <mat-form-field>
-    <mat-label>Select a date and time</mat-label>
-    <input matInput type="datetime-local" [formControl]="date">
-  </mat-form-field>
+  <div class="col-sm-12">
+    <label for="scheduleStartDtm" class="custom-date-label">Select Date For Schedule:</label>
+    <input id="scheduleStartDtm" class="custom-date-range-input" type="datetime-local"
+      formControlName="scheduleStartDtm" placeholder="YYYY-MM-DD" required>
+  </div>
+ 
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Clear</button>

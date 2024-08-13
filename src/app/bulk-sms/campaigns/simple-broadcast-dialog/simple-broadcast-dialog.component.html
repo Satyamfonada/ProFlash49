@@ -28,12 +28,15 @@
         <mat-form-field appearance="fill">
             <mat-label>From</mat-label>
             <mat-select formControlName="from">
-                <mat-option value="Fonada">Fonada</mat-option>
+              <mat-option *ngFor="let sender of Senderlist" [value]="sender.senderId">
+                {{ sender.sender }}
+              </mat-option>
             </mat-select>
-        </mat-form-field>
+          </mat-form-field>
+          
         <mat-form-field appearance="fill">
             <mat-label>To</mat-label>
-            <textarea matInput formControlName="to"
+            <textarea matInput formControlName="to" appPhoneNumberFormatter
                 placeholder="Enter mobile number and mobile number should start with 91 or without 91 and max 500 number with 91 and 591 number without 91 allowed"></textarea>
         </mat-form-field>
         <button type="button" mat-raised-button (click)="fileInput.click()">Upload a CSV File</button>
