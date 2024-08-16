@@ -89,11 +89,21 @@ export class SimpleBroadcastDialogComponent implements OnInit {
     });
   }
   pickTime() {
-    this.dialog.open(DatetimepickerComponent, {
+    const dialogRef = this.dialog.open(DatetimepickerComponent, {
       width: '40%',
       data: {}
-    })
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        console.log('Selected Date and Time:', result);
+        // Aug 14 2024 14:57:07 GMT+0530 (India Standard Time)
+      } else {
+        console.log('Dialog was closed without selecting a date');
+      }
+    });
   }
+
   createSimpleBroadcast(val) {
     this.pickTime()
     const session = JSON.parse(sessionStorage.getItem('user')!);

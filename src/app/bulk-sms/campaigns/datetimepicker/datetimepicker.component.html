@@ -1,13 +1,20 @@
-<h2 mat-dialog-title>Please select the date and time</h2>
-<mat-dialog-content align="center">
+<h2 mat-dialog-title>Please select the start and end date and time</h2>
+<mat-dialog-content>
   <div class="col-sm-12">
-    <label for="scheduleStartDtm" class="custom-date-label">Select Date For Schedule:</label>
+    <label for="scheduleStartDtm" class="custom-date-label">Start Time:</label>
     <input id="scheduleStartDtm" class="custom-date-range-input" type="datetime-local"
       formControlName="scheduleStartDtm" placeholder="YYYY-MM-DD" required>
   </div>
- 
+  <div class="col-sm-12">
+    <label for="scheduleEndDtm" class="custom-date-label">End Time:</label>
+    <input id="scheduleEndDtm" class="custom-date-range-input" type="datetime-local"
+      formControlName="scheduleEndDtm" placeholder="YYYY-MM-DD" required>
+    <div *ngIf="form.hasError('endDateInvalid')" class="error-message">
+      End time must be greater than start time.
+    </div>
+  </div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Clear</button>
-  <button mat-button [mat-dialog-close]="date.value" cdkFocusInitial>Ok</button>
+  <button mat-button [mat-dialog-close]="getSelectedDateTime()" [disabled]="form.invalid" cdkFocusInitial>Ok</button>
 </mat-dialog-actions>
