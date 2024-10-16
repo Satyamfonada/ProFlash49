@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AccountService, AlertService } from '../_services';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
     templateUrl: 'login.component.html',
@@ -19,7 +20,8 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private accountService: AccountService,
-        private alertService: AlertService
+        private alertService: AlertService,
+        private toastr: ToastrService,
     ) { }
 
     ngOnInit() {
@@ -35,31 +37,42 @@ export class LoginComponent implements OnInit {
     onSubmit() {
         this.submitted = true;
 
-
-        // reset alerts on submit
+        // Clear previous alerts on submit
         this.alertService.clear();
 
-        // stop here if form is invalid
+        // Stop if the form is invalid and show an error message
         if (this.form.invalid) {
+            this.toastr.error('Enter Credentials!', 'Error');
             return;
         }
 
         this.loading = true;
+
+        // Call the login function in the account service
         this.accountService.login(this.f['username'].value, this.f['password'].value)
-            .pipe(first())
+            .pipe(first()) // Take only the first emitted value
             .subscribe({
                 next: (res) => {
-                    // get return url from query parameters or default to home page
-                    // const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-                    // this.router.navigateByUrl(returnUrl);
-                    // window.location.reload();
+                    // Show success toastr if login is successful
+                    this.toastr.success('Login successful!', 'Success');
+
+                    // You can handle redirection or further actions here after successful login
+                    // For example: this.router.navigate(['/home']);
                 },
-                error: error => {
-                    this.alertService.error(error);
+                error: (error) => {
+                    // Check if the error status is 401 for unauthorized access
+                    if (error.status === 401) {
+                        this.toastr.error('Unauthorized access. Please check your credentials.', 'Error');
+                    } else {
+                        // Handle other error responses
+                        this.toastr.error('Unauthorized access. Please check your credentials.', 'Error');
+                    }
+
+                    // Stop loading when there's an error
                     this.loading = false;
                 }
             });
-
     }
+
 
 }

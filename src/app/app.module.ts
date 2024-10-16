@@ -70,11 +70,18 @@ import { MisToolReportingComponent } from './reporting/mis-tool-reporting/mis-to
 import { ReportFormComponent } from './reporting/report-form/report-form.component';
 import { DatetimepickerComponent } from './bulk-sms/campaigns/datetimepicker/datetimepicker.component';
 import { PhoneNumberFormatterDirective } from './shared/phone-number-formatter.directive';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot({
+            timeOut: 3000, // Duration for toast to disappear
+            positionClass: 'toast-top-right', // Position of toast
+            preventDuplicates: true, // Prevent duplicate toasts
+          }),
         ReactiveFormsModule,
         HttpClientModule,
         AppRoutingModule,
